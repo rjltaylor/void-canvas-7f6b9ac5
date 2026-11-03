@@ -1,32 +1,25 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
-// Book cover images for the Solo series, hosted on the project's media
-// storage. Used directly (no ES module import) per the asset pipeline.
-const soloSafeCover =
-  "https://vibe.filesafe.space/1793742305680131005/assets/b42d02b0-1f99-48f9-a127-f57c5e843d34.png";
-const soloWorkingCover =
-  "https://vibe.filesafe.space/1793742305680131005/assets/40a6bdf8-a98c-4daa-8369-9f371f4b370f.png";
-const soloThrivingCover =
-  "https://vibe.filesafe.space/1793742305680131005/assets/520d3a9c-1e0d-469b-b669-35a54f80b3fb.png";
+import { soloBookCovers } from "@/lib/solo-book-covers";
 
 const books = [
   {
     title: "Solo & Safe",
     blurb: "Feeling safe and steady wherever you roam.",
-    cover: soloSafeCover,
+    cover: soloBookCovers["Solo & Safe"],
     alt: "Solo and Safe book cover",
   },
   {
     title: "Solo & Working",
     blurb: "Building a work rhythm that travels with you.",
-    cover: soloWorkingCover,
+    cover: soloBookCovers["Solo & Working"],
     alt: "Solo and Working book cover",
   },
   {
     title: "Solo & Thriving",
     blurb: "Finding joy in a life lived on your own terms.",
-    cover: soloThrivingCover,
+    cover: soloBookCovers["Solo & Thriving"],
     alt: "Solo and Thriving book cover",
   },
 ];
