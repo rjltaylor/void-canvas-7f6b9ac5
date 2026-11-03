@@ -142,3 +142,297 @@
     color: var(--color-foreground);
   }
 }
+
+/* ---- Solo Series Early List page (preserved from the original launch preview) ----
+   Scoped under .solo-series so the warm editorial theme does not clobber the
+   app's design tokens. Mirrors the source HTML's styles 1:1. */
+.solo-series {
+  --cream: #f4e6d9;
+  --cream-deep: #ece0d1;
+  --card: #ffffff;
+  --ink: #4b4b4b;
+  --purple: #6f4a8e;
+  --purple-deep: #5a3b74;
+  --teal: #4c7d7e;
+  --gold: #e6b253;
+  --gold-soft: #fff3c4;
+  color-scheme: light;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Lato", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.solo-series * {
+  box-sizing: border-box;
+}
+
+.solo-series .page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: clamp(20px, 5vw, 40px);
+  padding-bottom: clamp(20px, 5vw, 40px);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.solo-series .card {
+  background: var(--card);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(111, 74, 142, 0.14);
+}
+
+.solo-series .brand-bar {
+  background: var(--purple);
+  padding: 18px 28px;
+  text-align: center;
+}
+.solo-series .brand-bar p {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 19px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+.solo-series .divider {
+  height: 4px;
+  background: var(--gold);
+}
+
+.solo-series .hero {
+  padding: clamp(32px, 7vw, 52px) clamp(24px, 6vw, 48px) 10px;
+  text-align: center;
+}
+.solo-series .eyebrow {
+  margin: 0 0 14px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.solo-series h1 {
+  margin: 0 0 20px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  color: var(--purple);
+  font-size: clamp(30px, 6vw, 42px);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+.solo-series .lede {
+  margin: 0 auto;
+  max-width: 46ch;
+  font-size: 17px;
+  line-height: 1.65;
+  text-align: left;
+}
+.solo-series .lede p {
+  margin: 0 0 14px;
+}
+.solo-series .lede p:last-child {
+  margin-bottom: 0;
+}
+.solo-series .lede strong {
+  color: var(--purple);
+}
+
+.solo-series .series {
+  padding: 8px clamp(20px, 5vw, 40px) 4px;
+}
+.solo-series .series h2 {
+  margin: 28px 0 20px;
+  text-align: center;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--teal);
+}
+.solo-series .books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 480px) {
+  .solo-series .books {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .solo-series .book img {
+    max-width: 140px;
+    margin: 0 auto;
+  }
+}
+.solo-series .book {
+  text-align: center;
+  min-width: 0;
+}
+.solo-series .book img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 22px rgba(62, 42, 82, 0.18);
+}
+.solo-series .book p {
+  margin: 10px 4px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.solo-series .book .title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 600;
+  color: var(--purple);
+  font-size: 15px;
+  margin: 12px 4px 2px;
+}
+
+.solo-series .capture {
+  margin: 30px clamp(20px, 5vw, 40px) 0;
+  background: var(--cream-deep);
+  border-left: 5px solid var(--gold);
+  border-radius: 10px;
+  padding: 26px 24px;
+}
+.solo-series .capture h2 {
+  margin: 0 0 8px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 600;
+  font-size: 23px;
+  color: var(--purple);
+  text-align: center;
+}
+.solo-series .capture .urgency {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.solo-series .capture .urgency b {
+  background: var(--gold-soft);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.solo-series form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.solo-series label {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 4px;
+  display: block;
+}
+.solo-series .field {
+  display: flex;
+  flex-direction: column;
+}
+.solo-series input[type="text"],
+.solo-series input[type="email"] {
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 16px;
+  padding: 12px 14px;
+  border: 1.5px solid rgba(111, 74, 142, 0.25);
+  border-radius: 9px;
+  background: #ffffff;
+  color: var(--ink);
+  width: 100%;
+}
+.solo-series input[type="text"]:focus,
+.solo-series input[type="email"]:focus {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(111, 74, 142, 0.15);
+}
+
+.solo-series button.submit {
+  margin-top: 6px;
+  background: var(--purple);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 20px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 140ms ease;
+}
+.solo-series button.submit:hover {
+  background: var(--purple-deep);
+}
+.solo-series button.submit:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.solo-series .fine {
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--teal);
+}
+
+.solo-series .thanks {
+  text-align: center;
+  padding: 10px 4px 4px;
+}
+.solo-series .thanks .big {
+  font-size: 30px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.solo-series .thanks p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.solo-series .thanks strong {
+  color: var(--purple);
+}
+
+.solo-series .closing {
+  padding: 34px clamp(24px, 6vw, 48px) 10px;
+  text-align: center;
+}
+.solo-series .closing .quote {
+  margin: 0 0 16px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--purple);
+}
+.solo-series .closing .sign {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+  color: var(--purple);
+}
+
+.solo-series footer {
+  background: var(--teal);
+  padding: 20px 24px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.solo-series footer a {
+  color: var(--gold-soft);
+  text-decoration: none;
+}
+
+.solo-series [hidden] {
+  display: none !important;
+}
