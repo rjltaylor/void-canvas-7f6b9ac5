@@ -1,7 +1,35 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
-import { soloBookCoverDataUri } from "@/lib/solo-book-cover";
+// Book cover images for the Solo series, hosted on the project's media
+// storage. Used directly (no ES module import) per the asset pipeline.
+const soloSafeCover =
+  "https://vibe.filesafe.space/1793742305680131005/assets/b42d02b0-1f99-48f9-a127-f57c5e843d34.png";
+const soloWorkingCover =
+  "https://vibe.filesafe.space/1793742305680131005/assets/40a6bdf8-a98c-4daa-8369-9f371f4b370f.png";
+const soloThrivingCover =
+  "https://vibe.filesafe.space/1793742305680131005/assets/520d3a9c-1e0d-469b-b669-35a54f80b3fb.png";
+
+const books = [
+  {
+    title: "Solo & Safe",
+    blurb: "Feeling safe and steady wherever you roam.",
+    cover: soloSafeCover,
+    alt: "Solo and Safe book cover",
+  },
+  {
+    title: "Solo & Working",
+    blurb: "Building a work rhythm that travels with you.",
+    cover: soloWorkingCover,
+    alt: "Solo and Working book cover",
+  },
+  {
+    title: "Solo & Thriving",
+    blurb: "Finding joy in a life lived on your own terms.",
+    cover: soloThrivingCover,
+    alt: "Solo and Thriving book cover",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -66,11 +94,13 @@ function Index() {
           <div className="series">
             <h2>Meet the series</h2>
             <div className="books">
-              <div className="book">
-                <img src={soloBookCoverDataUri} alt="Solo and Working book cover" />
-                <p className="title">Solo &amp; Working</p>
-                <p>Building a work rhythm that travels with you.</p>
-              </div>
+              {books.map((book) => (
+                <div className="book" key={book.title}>
+                  <img src={book.cover} alt={book.alt} loading="lazy" />
+                  <p className="title">{book.title}</p>
+                  <p>{book.blurb}</p>
+                </div>
+              ))}
             </div>
           </div>
 
